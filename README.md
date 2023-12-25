@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +50,13 @@
 
     /* Alternate row colors for better readability */
     tbody tr:nth-child(even) {
-      background-color: #302f2f;
+      background-color: #000; /* Black background color for even rows */
+      color: #fff; /* White text color for even rows */
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #302f2f; /* Dark grey background color for odd rows */
+      color: #fff; /* White text color for odd rows */
     }
 
     /* Styles for the footer */
@@ -148,3 +153,4 @@
 
 </body>
 </html>
+  
