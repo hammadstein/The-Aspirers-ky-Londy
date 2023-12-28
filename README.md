@@ -1,156 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Aspirers Members</title>
-  <style>
-    /* Reset default margin and padding */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif; /* Fallback font */
-      background-color: #221f1f; /* Netflix-inspired background color */
-      color: #fff; /* Text color */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e4e4e4;
+            color: #000;
+        }
 
-    /* Styles for the header */
-    header {
-      background-color: #000; /* Black header color */
-      padding: 10px;
-      text-align: center;
-    }
+        header {
+            background-color: #075e54;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+        }
 
-    /* Styles for the title with off-white shadow */
-    h1 {
-      font-size: 2em;
-      color: #fff; /* White color for text */
-      text-shadow: 1px 1px 5px #ddd; /* Off-white shadow */
-    }
+        h1 {
+            margin: 0;
+        }
 
-    /* Styles for the table */
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      background-color: #3b3a3a; /* Netflix-inspired table background color */
-    }
+        #studentList {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
-    /* Styles for table header */
-    th {
-      background-color: #221f1f;
-      color: #fff;
-      padding: 10px;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-    /* Styles for table cells */
-    td {
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
 
-    /* Alternate row colors for better readability */
-    tbody tr:nth-child(even) {
-      background-color: #000; /* Black background color for even rows */
-      color: #fff; /* White text color for even rows */
-    }
+        th {
+            background-color: #128C7E;
+            color: #fff;
+        }
 
-    tbody tr:nth-child(odd) {
-      background-color: #302f2f; /* Dark grey background color for odd rows */
-      color: #fff; /* White text color for odd rows */
-    }
+        tr:hover {
+            background-color: #ddd;
+        }
 
-    /* Styles for the footer */
-    footer {
-      background-color: #221f1f;
-      padding: 10px;
-      text-align: center;
-    }
+        #schoolButton {
+            background-color: #075e54;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px auto; /* Center the button */
+            display: block;
+        }
 
-    /* Styles for footer text */
-    footer p {
-      margin: 0;
-    }
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
 
-    /* Styles for the friendship paragraph */
-    .friendship {
-      width: 80%;
-      margin: 20px auto;
-      text-align: center;
-    }
-  </style>
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        footer {
+            background-color: #075e54;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+    <title>Student Details</title>
 </head>
 <body>
+    <header>
+        <h1>Matrix School Of IT and Business</h1>
+    </header>
+    <section id="studentList">
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Riyasat Ali</td>
+                    <td>03443853735</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Muhammad Murtaza</td>
+                    <td>03150727452</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Zeeshan Ali</td>
+                    <td>03442472887</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Ali Hassan</td>
+                    <td>03467248735</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Muhammad Ramzan</td>
+                    <td>03074207836</td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>Waqas Shair</td>
+                    <td>03434797140</td>
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td>Usman Zafar</td>
+                    <td>03423857512</td>
+                </tr>
+                <tr>
+                    <td>08</td>
+                    <td>Muhammad Shehryar</td>
+                    <td>03415231500</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <button id="schoolButton" onclick="showPopup()">School</button>
 
-  <header>
-    <h1>The Aspirers Members</h1>
-  </header>
+    <!-- Popup Content -->
+    <div id="schoolPopup" class="popup">
+        <h2>School Information</h2>
+        <p><strong>School Name:</strong> Matrix School Of IT and Business</p>
+        <p><strong>City:</strong> Mandi Shah Jewana, Jhang</p>
+        <button onclick="hidePopup()">Close</button>
+    </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Serial Number</th>
-        <th>Name</th>
-        <th>Phone Number</th>
-        <th>Gender</th>
-        <th>Age</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Member information -->
-      <tr>
-        <td>1</td>
-        <td>Hammad</td>
-        <td>03025306560</td>
-        <td>Male</td>
-        <td>20</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Farhan Nitrate</td>
-        <td>03456878739</td>
-        <td>Male</td>
-        <td>22</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Saeed</td>
-        <td>03481735955</td>
-        <td>Male</td>
-        <td>22</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Nouman</td>
-        <td>03428525969</td>
-        <td>Transgender</td>
-        <td>22</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Asif</td>
-        <td>03406935927</td>
-        <td>Male</td>
-        <td>22</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Dr. Sohail</td>
-        <td>03066464929</td>
-        <td>Male</td>
-        <td>25</td>
-      </tr>
-      <!-- Add more rows as needed -->
-    </tbody>
-  </table>
+    <div id="overlay" class="overlay" onclick="hidePopup()"></div>
 
-  <footer>
-    <p>&copy; 2023 The Aspirers Company</p>
-  </footer>
+    <!-- JavaScript -->
+    <script>
+        function showPopup() {
+            var popup = document.getElementById('schoolPopup');
+            var overlay = document.getElementById('overlay');
 
-  <div class="friendship">
-    <p>The members of The Aspirers share a deep bond of friendship, supporting each other through thick and thin. Their camaraderie is the cornerstone of their success and growth as a team.</p>
-  </div>
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
 
+            // Triggering reflow to restart the animation
+            void popup.offsetWidth;
+
+            popup.style.opacity = '1';
+        }
+
+        function hidePopup() {
+            var popup = document.getElementById('schoolPopup');
+            var overlay = document.getElementById('overlay');
+
+            popup.style.opacity = '0';
+
+            setTimeout(function() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 500); // 0.5s, matching the transition duration
+        }
+    </script>
+    <footer>
+        <p>&copy; 2023 Matrix School Of IT and Business. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-  
